@@ -18,7 +18,7 @@ public class ThemeManager : MonoBehaviour
     [Header("Sprite Themes: [Background, Ball, PaddleR, PaddleL]")]  //NOTE: ORDER THEM CORRECTLY IN EDITOR; ASSIGNS SPRITE BY ORDER IN ARRAY
 
     // current theme selected.
-    private Theme currentTheme;
+    public Theme currentTheme;
 
     // array of themes to choose from.
     // selected in editor.
@@ -35,6 +35,9 @@ public class ThemeManager : MonoBehaviour
 
     [Header("Halloween")]
     public Sprite[] halloweenTheme;
+
+    [Header("Classic")]
+    public Sprite[] classicTheme;
 
     // temporary id variable for pre-ui testing.
     private int TEMPThemeID = 0;
@@ -70,7 +73,7 @@ public class ThemeManager : MonoBehaviour
     }
 
     // implements the provided theme.
-    public void ChangeTheme(Theme theme)
+    private void ChangeTheme(Theme theme)
     {
         // sets sprites (visuals)
         background.sprite = theme.Background;
